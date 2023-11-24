@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<c3p0-config>
+    <default-config>
+        <!-- 必填 -->
+        <!-- 驱动类 -->
+        <property name="driverClass">oracle.jdbc.driver.OracleDriver</property>
+        <!-- URL -->
+        <property name="jdbcUrl">jdbc:oracle:thin:@192.168.90.224:1521:orcl</property>
+        <!--property name="jdbcUrl">jdbc:oracle:thin:@118.122.115.196:1521:orcl</property-->
+        <!-- 账号 -->
+        <property name="user">eas820</property>
+        <!-- 密码 -->
+        <property name="password">eas820</property>
+        <!--property name="password">SDHR</property-->
+        <!--当连接池中的连接用完时，C3P0一次性创建新连接的数目 -->
+        <property name="acquireIncrement" value="10" />
+        <!-- 定义在从数据库获取新连接失败后重复尝试获取的次数，默认为30 -->
+        <property name="acquireRetryAttempts" value="100" />
+        <!-- 两次连接中间隔时间，单位毫秒，默认为1000 -->
+        <property name="acquireRetryDelay" value="1000" />
+        <!-- 连接关闭时默认将所有未提交的操作回滚。默认为false -->
+        <property name="autoCommitOnClose" value="false" />
+        <!-- 始化时创建的连接数，应在minPoolSize与maxPoolSize之间取值。默认为3； -->
+        <property name="initialPoolSize" value="3" />
+        <!-- 最大空闲时间，超过空闲时间的连接将被丢弃。为0或负数则永不丢弃。默认为0； -->
+        <property name="maxIdleTime" value="10000" />
+        <!-- 接池中保留的最大连接数。默认为15 -->
+        <property name="maxPoolSize" value="40" />
+        <!-- JDBC的标准参数，用以控制数据源内加载的PreparedStatement数量。但由于预缓存的Statement属 于单个Connection而不是整个连接池。所以设置这个参数需要考虑到多方面的因素，如果maxStatements与
+            maxStatementsPerConnection均为0，则缓存被关闭。默认为0； -->
+        <property name="maxStatements" value="0" />
+    </default-config>
+</c3p0-config>
